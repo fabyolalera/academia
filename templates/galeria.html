@@ -1,0 +1,77 @@
+{% extends 'index.html' %}
+
+{% block titulo %}Galeria{% endblock %}
+
+{% block contenido %}
+
+    {% load static %}
+    <!-- portfolio section -->
+
+  <section class="portfolio_section" style="padding: 5em 0">
+    <div class="container">
+      <div class="custom_heading-container">
+        <h2>
+          Galeria
+        </h2>
+        <hr>
+      </div>
+      <p>
+        Momentos unicos e inolvidables compartidos con nuestos alumnos de la academia, Dejelvic.
+      </p>
+      <div class="layout_padding2-top" >
+        <div class="row">
+          <div class="col-md-4">
+            <div class="img-box">
+              <img src="{% static 'images/p-1.jpg' %}" alt="">
+              <a href="">
+                <img src="{% static 'images/link.png' %}" alt="">
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="img-box">
+              <img src="{% static 'images/p-2.jpg' %}" alt="">
+              <a href="">
+                <img src="{% static 'images/link.png' %}" alt="">
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="img-box">
+              <img src="{% static 'images/p-3.jpg' %}" alt="">
+              <a href="">
+                <img src="{% static 'images/link.png' %}" alt="">
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="img-box">
+              <img src="{% static 'images/p-4.jpg' %}" alt="">
+              <a href="">
+                <img src="{% static 'images/link.png' %}" alt="">
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="img-box">
+              <img src="{% static 'images/p-5.jpg' %}" alt="">
+              <a href="">
+                <img src="{% static 'images/link.png' %}" alt="">
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="img-box">
+              <img src="{% static 'images/p-6.jpg' %}" alt="">
+              <a href="">
+                <img src="{% static 'images/link.png' %}" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end portfolio section -->
+{% endblock  %}

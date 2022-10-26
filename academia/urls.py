@@ -15,7 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls.conf import include
+from academia.views import index, contacto, galeria, nosotros
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("", index, name="index"),
+    path('contacto/', contacto, name='contacto'),
+    path('galeria/', galeria, name="galeria"),
+    path('nosotros/', nosotros, name="nosotros"),
+    path('', include('ritmos.urls')),
 ]

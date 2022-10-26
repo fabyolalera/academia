@@ -1,0 +1,93 @@
+{% extends 'index.html' %}
+
+{% block titulo %}Contacto{% endblock %}
+
+{% block contenido %}
+
+    <!-- contact section -->
+
+  <section class="contact_section layout_padding-bottom" style="padding: 7em 0; ">
+    <div class="container" style="box-shadow: 0px 0px 24px 0px rgb(0 0 0 / 13%); background-color: #afcacc; padding: 2em ;">
+      <div class="d-flex flex-column align-items-center">
+        <div class="custom_heading-container">
+          <h2 style="tex-align:center;">
+            Contacto
+          </h2>
+        </div>
+      </div>
+      <div class="layout_padding-top layout_padding2-bottom">
+        <div class="row">
+          <div class="col-md-7">
+            <form action="{% url 'contacto' %}" method="POST">
+              {% csrf_token %}
+              <div class="contact_form-container">
+                <div>
+                  {% for campo in formulario %}
+                  <div>
+                    {{campo}}
+                  </div>
+                  {% endfor %} 
+                  <div class="mt-5">
+                    <button type="submit">
+                      send
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+
+          </div>
+          <div class="col-md-5">
+            <div class="map-box">
+              <div id="map">
+                <div class="map-responsive">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d690.424466158992!2d-58.48252478865653!3d-34.59832613201293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb619b1abc33d%3A0x75813abdfffb4ac7!2sAv.%20San%20Mart%C3%ADn%204416%2C%20C1417DSR%20CABA!5e0!3m2!1ses-419!2sar!4v1666764275238!5m2!1ses-419!2sar" width="600" height="300" frameborder="0" style="border:0; width: 100%;" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact_items">
+
+        <a href="">
+          <div class="item ">
+            <div class="img-box box-2">
+
+            </div>
+            <div class="detail-box">
+              <p>
+                +549 1234567890
+              </p>
+            </div>
+          </div>
+        </a>
+        <a href="">
+          <div class="item ">
+            <div class="img-box box-3">
+
+            </div>
+            <div class="detail-box">
+              <p>
+                dejelvic@gmail.com
+              </p>
+            </div>
+          </div>
+        </a>
+        <a href="">
+          <div class="item ">
+            <div class="img-box box-1">
+
+            </div>
+            <div class="detail-box">
+              <p>
+                Av. San Martin.
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+{% endblock %} 
