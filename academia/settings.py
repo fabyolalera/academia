@@ -77,9 +77,9 @@ WSGI_APPLICATION = 'academia.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': '', #aca se agrega el nombre de la base de datos
+        'NAME': 'Django_CaC', #aca se agrega el nombre de la base de datos
         'USER': 'postgres',
-        'PASSWORD': '', #se coloca la contraseña para ingresar a postgres
+        'PASSWORD': 'josse99', #se coloca la contraseña para ingresar a postgres
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }

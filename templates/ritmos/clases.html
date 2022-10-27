@@ -1,1 +1,64 @@
-<h1>{{ritmos}}</h1>
+{% extends 'index.html' %}
+
+{% block titulo %}Clases{% endblock %}
+
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% comment %} <link rel="stylesheet" href="{% static 'css/clase/bootstrap.min.css' %}"> {% endcomment %}
+  
+    <link rel="stylesheet" href="{% static 'css/clase/component.css' %}">
+   
+{% endblock%}
+
+{% block contenido %}
+    
+
+
+<section id="gallery">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-offset-2 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="0.3s" style="text-align: center;
+      padding-top: 2rem;">
+        <div class="section-title" >
+          <h2 style="text-transform: uppercase; font-weight: bold; font-family: Poppins, sans-serif; font-size: 1.8rem;
+          ">Nuestras clases</h2>
+          <p>Seleccione las tarjertas para tener mayor informacion sobre las clases</p>
+        </div>
+      </div>
+
+      <ul class="grid cs-style-4" style="display:flex; flex-wrap: wrap">
+        {% for ritmo in ritmos %}
+        <li class="col-md-4 col-sm-4">
+          <figure>
+            <div><img src="{% static 'images/descarga1.jpeg' %}" alt="image 1" style="height:400px; width=500px"></div>
+            <figcaption>
+              <h1>{{ritmo.nombre}}</h1>
+              <small>{{ritmo.descripcion}}</small>
+              <a href="#">Read More</a>
+            </figcaption>
+          </figure>
+
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+  
+{% endblock %}
+
+{% block js %}
+
+{% comment %} <script src="{% static 'js/clase/jquery.js' %}"></script> {% endcomment %}
+{% comment %} <script src="{% static 'js/clase/bootstrap.min.js' %}"></script> {% endcomment %}
+{% comment %} <script src="{% static 'js/clase/vegas.min.js' %}"></script> {% endcomment %}
+<script src="{% static 'js/clase/modernizr.custom.js' %}"></script>
+{% comment %} <script src="{% static 'js/clase/toucheffects.js' %}"></script> {% endcomment %}
+{% comment %} <script src="{% static 'js/clase/owl.carousel.min.js' %}"></script> {% endcomment %}
+{% comment %} <script src="{% static 'js/clase/smoothscroll.js' %}"></script> {% endcomment %}
+{% comment %} <script src="{% static 'js/clase/wow.min.js' %}"></script> {% endcomment %}
+{% comment %} <script src="{% static 'js/clase/custom.js' %}"></script> {% endcomment %}
+{% endblock %}

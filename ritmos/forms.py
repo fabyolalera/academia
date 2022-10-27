@@ -1,6 +1,3 @@
-from re import A
-from socket import fromshare
-from tkinter import Label
 from django import forms
 
 class ContactoForm(forms.Form):
