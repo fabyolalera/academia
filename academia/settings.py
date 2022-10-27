@@ -55,7 +55,7 @@ ROOT_URLCONF = 'academia.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [BASE_DIR / 'templates' or 'ritmos' / 'templates' ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'academia.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': '', #aca se agrega el nombre de la base de datos
+        'USER': 'postgres',
+        'PASSWORD': '', #se coloca la contraseña para ingresar a postgres
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
