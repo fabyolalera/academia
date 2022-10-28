@@ -17,3 +17,8 @@ class ContactoForm(forms.Form):
                             max_length=150,
                             widget=forms.Textarea(attrs={'placeholder':'Mensaje','rows':5, 'cols':71})
                             )
+
+class Form_CrearClase(forms.Form):
+    nombre = forms.CharField(max_length=50)
+    descripcion = forms.CharField(max_length=500)
+    

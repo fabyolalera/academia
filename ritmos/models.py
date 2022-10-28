@@ -12,3 +12,9 @@ class Tipos_de_baile(models.Model):
         verbose_name = 'Tipo de baile'
         verbose_name_plural = 'Tipos de bailes'
         
+class Contacto(models.Model):
+    nombre = models.CharField(max_length=50)
+    email = models.EmailField()
+    telefono = models.IntegerField()
+    mensaje = models.CharField(max_length=300)
+        
