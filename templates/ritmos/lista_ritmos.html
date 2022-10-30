@@ -7,6 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    {{ritmos}}
+
+    {% comment %} {% for ritmo in lista_ritmos  %} {% endcomment %}
+    <h3>El nombre del curso es: {{ritmo.nombre}}</h3>
+    <h3>La descripcion del curso es: {{ritmo.descripcion}}</h3>
+    {% comment %} {% endfor %} {% endcomment %}
+
 </body>
 </html>

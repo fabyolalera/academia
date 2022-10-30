@@ -3,10 +3,9 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib import messages
 
-from academia.forms import ContactoForm   
-
 def index(request):
     return render(request, 'index.html', context={})
+
 
 def contacto(request):
     if request.method == 'POST':
@@ -25,6 +24,7 @@ def contacto(request):
             contact_form = ContactoForm() 
         #    }       
     return render(request, 'contacto.html', {'contact_form':contact_form},)
+
 
 def galeria(request):
     return render(request, 'galeria.html', context={})

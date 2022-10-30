@@ -2,6 +2,7 @@ from re import A
 from socket import fromshare
 from tkinter import Label
 from unittest.util import _MAX_LENGTH
+
 from django import forms
 from django.forms import ValidationError
 
@@ -62,3 +63,12 @@ class ContactoForm(forms.Form):
           #  msg = "Debe agregar la palabra 'ayuda' en el campo."
             #self.add_error('asunto', msg)
             #self.add_error('mensaje', msg)
+        max_length=150,
+        widget=forms.Textarea(attrs={'placeholder':'Mensaje','rows':5, 'cols':71})
+
+
+class Form_CrearClase(forms.Form):
+    nombre = forms.CharField(max_length=50)
+    descripcion = forms.CharField(max_length=500)
+    
+
