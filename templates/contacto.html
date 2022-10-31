@@ -18,14 +18,29 @@
       <div class="layout_padding-top layout_padding2-bottom">
         <div class="row">
           <div class="col-md-7">
-            <form action="{% url 'contacto' %}" method="POST">
+            <!--
+            <form action="{% url 'contacto' %}" method="POST">-->
+              {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}" role="alert">
+                        {{ message }}
+                    </div>
+              {% endfor %}
+
+              <form novalidate action="{% url 'contacto' %}" method="POST">
               {% csrf_token %}
               <div class="contact_form-container">
                 <div>
+<<<<<<< HEAD
                   {% for campo in formulario %}
-                  <div>
-                    {{campo}}
-                  </div>
+=======
+                  {% for campo in contact_form %}
+>>>>>>> 944275e4f9f792a1444615beb9ad5fb93677c387
+                   
+                    <div>
+                      <label for="">{{campo.label}}</label>
+                      {{campo}}
+                    </div>
+                    <div>{{campo.errors}}</div>   
                   {% endfor %} 
                   <div class="mt-5">
                     <button type="submit">
