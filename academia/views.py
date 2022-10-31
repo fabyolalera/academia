@@ -2,6 +2,7 @@ from multiprocessing import context
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib import messages
+from ritmos.forms import ContactoForm
 
 def index(request):
     return render(request, 'index.html', context={})
@@ -9,10 +10,10 @@ def index(request):
 
 def contacto(request):
     if request.method == 'POST':
-        contact_form = ContactoForm(request.POST)
+        formulario = ContactoForm(request.POST)
         #print(request.POST)
         
-        if(contact_form.is_valid()):
+        if(formulario.is_valid()):
            # pass
             messages.success(request,'Gracias por contactarse.')
             #messages.info(request,'Otro mensajito')
@@ -21,9 +22,9 @@ def contacto(request):
     else: 
         
         #context = {
-            contact_form = ContactoForm() 
+            formulario = ContactoForm() 
         #    }       
-    return render(request, 'contacto.html', {'contact_form':contact_form},)
+    return render(request, 'contacto.html', {'formulario':formulario},)
 
 
 def galeria(request):
