@@ -1,3 +1,4 @@
+from distutils.command.upload import upload
 from re import A
 from socket import fromshare
 from tkinter import Label
@@ -70,5 +71,6 @@ class ContactoForm(forms.Form):
 class Form_CrearClase(forms.Form):
     nombre = forms.CharField(max_length=50)
     descripcion = forms.CharField(max_length=500)
+    imagen = forms.ImageField()
     
 

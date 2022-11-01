@@ -1,9 +1,12 @@
+from distutils.command.upload import upload
 from tabnanny import verbose
+from turtle import width
 from django.db import models
 
 class Tipos_de_baile(models.Model):
     nombre = models.CharField(max_length=50)
     descripcion = models.CharField(max_length=100)
+    imagen = models.ImageField(upload_to = 'Ritmos', null=True) 
     
     def __str__(self):
         return self.nombre

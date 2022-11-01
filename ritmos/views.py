@@ -16,6 +16,8 @@ def contacto(request):
                 telefono = formulario.cleaned_data['telefono'],
                 mensaje = formulario.cleaned_data['mensaje'],
             )
+            
+            # formulario.save()
            
     context = {
           'formulario' : ContactoForm()    
@@ -43,8 +45,10 @@ def crear_clase(request): #agrefar dats en la base de dato de Tipo_de_baile
         if form.is_valid():
             Tipos_de_baile.objects.create(
                 nombre= form.cleaned_data['nombre'],
-                descripcion = form.cleaned_data['descripcion']
+                descripcion = form.cleaned_data['descripcion'],
+                imagen = form.cleaned_data['imagen']
             )
+            
         
         return redirect('clases')
     

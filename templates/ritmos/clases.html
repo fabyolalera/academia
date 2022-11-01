@@ -31,15 +31,23 @@
 
       <ul class="grid cs-style-4" style="display:flex; flex-wrap: wrap">
         {% for ritmo in ritmos %}
-        <li class="col-md-4 col-sm-4">
-          <figure>
-            <div><img src="{% static 'images/descarga1.jpeg' %}" alt="image 1" style="height:400px; width=500px"></div>
+        <li class="col-md-4 col-sm-4" >
+          
+          <figure >
+            <div style="height:25em; width=30em;  ">
+              {% if ritmo.imagen %}
+                <img src="{{ritmo.imagen.url}}" alt="image 1" style="height:25em; width=30em; background-position: center;">
+              {% else %}
+                <img  src =" {% static 'images/descarga3.jpeg' %} " alt =" imagen 1"  style="height:25em; width=30em; background-position: center;"> 
+              {%endif%}
+              </div>
             <figcaption>
               <h1>{{ritmo.nombre}}</h1>
               <small>{{ritmo.descripcion}}</small>
               <a href="#">Read More</a>
             </figcaption>
           </figure>
+          
 
         </li>
         {% endfor %}

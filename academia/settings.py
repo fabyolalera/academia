@@ -55,7 +55,7 @@ ROOT_URLCONF = 'academia.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates' or 'ritmos' / 'templates' ],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -77,9 +77,9 @@ WSGI_APPLICATION = 'academia.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': '', #aca se agrega el nombre de la base de datos
+        'NAME': 'Django_CaC', #aca se agrega el nombre de la base de datos
         'USER': 'postgres',
-        'PASSWORD': '', #se coloca la contraseña para ingresar a postgres
+        'PASSWORD': 'josse99', #se coloca la contraseña para ingresar a postgres
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
@@ -132,3 +132,8 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+import os
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
