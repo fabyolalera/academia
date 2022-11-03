@@ -1,8 +1,11 @@
 from multiprocessing import context
 from tkinter.tix import Form
-from django.shortcuts import render, redirect
-from ritmos.models import Tipos_de_baile, Contacto
-from ritmos.forms import  ContactoForm, Form_CrearClase
+
+from django.shortcuts import redirect, render
+
+from ritmos.forms import ContactoForm, Form_CrearClase
+from ritmos.models import Contacto, Tipos_de_baile
+
 
 def contacto(request):
     if request.method == 'POST':
@@ -18,11 +21,14 @@ def contacto(request):
             )
             
             # formulario.save()
+    else:
+        formulario = ContactoForm()
            
     context = {
           'formulario' : ContactoForm()    
         }       
-    return render(request, 'contacto.html', context=context)
+   #return render(request, 'contacto.html', context=context)
+    return render(request, 'contacto.html',{'formulario':formulario} )
 
 def clases(request):
     ritmos = Tipos_de_baile.objects.all()

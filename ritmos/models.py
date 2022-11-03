@@ -1,7 +1,10 @@
 from distutils.command.upload import upload
 from tabnanny import verbose
+
 from turtle import width
+
 from django.db import models
+
 
 class Tipos_de_baile(models.Model):
     nombre = models.CharField(max_length=50)
