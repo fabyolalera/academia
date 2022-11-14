@@ -26,7 +26,7 @@
                     </div>
               {% endfor %}
 
-              <form novalidate action="{% url 'contacto' %}" method="POST">
+            <form novalidate action="{% url 'contacto' %}" method="POST">
               {% csrf_token %}
               <div class="contact_form-container">
                 <div>
