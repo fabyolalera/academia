@@ -26,11 +26,11 @@ def contacto(request):
             messages.warning(request,'Corrija los errores')
     else: 
         
-        #context = {
-
-            formulario = ContactoForm() 
-        #    }       
+        context = {
+            'formulario' : ContactoForm() 
+        }       
     return render(request, 'contacto.html', {'formulario':formulario},)
+    #return render(request, 'contacto.html', context=context)
 
 
 

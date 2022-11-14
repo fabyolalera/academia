@@ -27,8 +27,8 @@ def contacto(request):
     context = {
           'formulario' : ContactoForm()    
         }       
-   #return render(request, 'contacto.html', context=context)
-    return render(request, 'contacto.html',{'formulario':formulario} )
+    return render(request, 'contacto.html', context=context)
+    #return render(request, 'contacto.html',{'formulario':formulario} )
 
 def clases(request):
     ritmos = Tipos_de_baile.objects.all()

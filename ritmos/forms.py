@@ -13,39 +13,49 @@ def alfabetico(value):
                               #code='Error1',
                               params={'valor':value}
                               )
-        
 
 
 class ContactoForm(forms.Form):
     nombre = forms.CharField(
             label='Nombre',
-            required=False,
+            required=True,
             validators=(alfabetico,),
-            widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Nombre (sólo texto)'})
+            error_messages={
+                'required': 'Por favor ingrese un Nombre',
+            },
+            widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Nombre (sólo texto)' })
             )
     
     email = forms.EmailField(
             label='Email',
             max_length=50,
             error_messages={
-                'required': 'Por favor ingrese un correo',
+                'required': 'Por favor ingrese una dirección de correo',
+                'invalid':'Por favor ingrese una dirección de mail válido'
             },
             widget=forms.TextInput(attrs={'class':'form-control','type':'email','placeholder':'Email'})
             )
     
     telefono = forms.IntegerField(
             label='Teléfono',
-            max_value=99999999999,
-            min_value=0,
+            max_value=100000000000,
+            min_value=100000,
             error_messages={
-                'required': 'Por favor ingrese un teléfono válido',
+                'required': 'Por favor ingrese un número de teléfono',
+                'invalid':'Ingrese sólo números',
+                'max_value':'No es un número válido',
+                'min_value':'No es un número válido',
             },
             widget=forms.TextInput(attrs={'class':'form_control','placeholder':'Telefono'})
             )
     
     mensaje = forms.CharField(
             label='Mensaje',
-            max_length=500,
+            max_length=150,
+            error_messages={
+                'required': 'Por favor ingrese un mensaje',
+                'max_length':'Mensaje demasiado largo'
+            },
             widget=forms.Textarea(attrs={'class':'form-control','placeholder':'Mensaje','rows':5, 'cols':71})
             )
     
@@ -54,6 +64,7 @@ class ContactoForm(forms.Form):
         if len(data) < 10:
             raise ValidationError("Debes especificar mejor el mensaje que nos envias")
         return data
+    
     
     def clean(self):
         cleaned_data = super().clean()
